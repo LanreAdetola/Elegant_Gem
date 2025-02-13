@@ -1,22 +1,21 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router'; // Import useRouter for navigation
+import { useRouter } from 'vue-router'; // For navigation
 import Products from './views/Products.vue'; // Import Products component
-import Cart from './components/Cart.vue'; // Import Cart component
-import WelcomeScreen from './components/WelcomeScreen.vue';
-import NavBar from './components/NavBar.vue';
+import WelcomeScreen from './components/WelcomeScreen.vue'; // Import WelcomeScreen
+import NavBar from './components/NavBar.vue'; // Import NavBar
 import { useI18n } from 'vue-i18n';
 
 // State to track if user has chosen preferences
 const preferencesChosen = ref(false);
 
 // Track selected language
-const { locale } = useI18n(); // Get the locale function from vue-i18n
+const { locale } = useI18n(); // Get locale from vue-i18n
 
-// Handle preferences from WelcomeScreen component
+// Handle preferences from WelcomeScreen
 function handlePreferences(selectedLanguage) {
-  locale.value = selectedLanguage; // Update the language in vue-i18n
-  preferencesChosen.value = true; // Show the main app content
+  locale.value = selectedLanguage; // Update language
+  preferencesChosen.value = true; // Move to main app content
 }
 
 // State to track cart items
@@ -26,40 +25,38 @@ const cart = ref([]);
 function updateCart(product) {
   const existingProduct = cart.value.find(item => item.id === product.id);
   if (existingProduct) {
-    existingProduct.quantity += 1; // Increase quantity if product already in cart
+    existingProduct.quantity += 1; // Increase quantity
   } else {
     cart.value.push({ ...product, quantity: 1 }); // Add new product to cart
   }
 }
 
-// Calculate the total price of items in the cart
+// Calculate total price of items in the cart
 function calculateTotal() {
   return cart.value.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
 }
 
-// Use the Vue Router to navigate to the cart page
+// Navigate to cart page
 const router = useRouter();
 function goToCart() {
-  router.push('/cart'); // Corrected navigation using `router.push`
+  router.push('/cart'); // Navigate to cart page
 }
 </script>
 
 <template>
   <div id="app">
-    <!-- Show Welcome Screen if preferences are not chosen -->
+    <!-- Show Welcome Screen if preferences not chosen -->
     <WelcomeScreen v-if="!preferencesChosen" @preferencesChosen="handlePreferences" />
     
     <!-- Main App Content -->
     <div v-else>
-      <NavBar /> <!-- Add NavBar component -->
+      <NavBar /> <!-- Navigation bar -->
 
       <h1>The Elegant Gem</h1> <!-- Store Name -->
-
-      <div class="logo-placeholder">[Logo Placeholder]</div>
+      <div class="logo-placeholder">[Logo Placeholder]</div> <!-- Placeholder for logo -->
 
       <!-- Product List -->
       <Products :cart="cart" :updateCart="updateCart" />
-
     </div>
 
     <!-- Sticky Footer Cart Summary -->
@@ -77,17 +74,26 @@ function goToCart() {
 /* General App Styles */
 #app {
   padding: 2em;
-  padding-bottom: 80px; /* Add bottom padding to make space for sticky footer */
-  border: 2px solid black; /* Add black border around the app */
-  border-radius: 8px; /* Optional: rounded corners */
-  position: relative; /* Allow sticky footer to be relative to the container */
-  min-height: 100vh; /* Ensure the app takes the full height of the viewport */
-  box-sizing: border-box; /* Include padding and border in the total size */
+  padding-bottom: 80px; /* Space for sticky footer */
+  border: 2px solid black;
+  border-radius: 8px;
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 100%; /* Ensures it fits within the viewport */
+  margin: 0 auto;
+}
+
+/* Header Styles (Store Name) */
+h1 {
+  font-size: 2em;
+  text-align: center; /* Center the store name */
+  margin-bottom: 1em;
 }
 
 /* Sticky Footer Styles */
 .sticky-footer {
-  position: absolute; /* Position relative to the container */
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -96,7 +102,7 @@ function goToCart() {
   text-align: center;
   padding: 1em;
   z-index: 1000;
-  border-top: 2px solid #000; /* Border between footer and content */
+  border-top: 2px solid #000;
 }
 
 .cart-summary {
@@ -115,5 +121,32 @@ function goToCart() {
 
 .cart-summary span {
   font-size: 1.2em;
+}
+
+/* Mobile Styles for iPhone and similar devices */
+@media (max-width: 390px) {
+  #app {
+    padding: 1em;
+    font-size: 0.9em; /* Slightly smaller font */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Reduce store name size */
+  }
+
+  .sticky-footer {
+    padding: 0.8em;
+  }
+
+  .cart-summary button {
+    padding: 6px 12px; /* Smaller button */
+  }
+}
+
+/* For tablets (up to 768px width) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
 }
 </style>

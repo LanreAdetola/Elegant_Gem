@@ -40,8 +40,11 @@ function submitPreferences() {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #f0f4f8; /* Soft background color */
+  min-height: 100vh; /* Ensure it fills the whole screen height */
+  background-image: url('your-background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Card-style welcome screen */
