@@ -60,7 +60,7 @@ function submitPreferences() {
 h1 {
   position: relative;
   top: 30px;
-  font-size: 3.0em;
+  font-size: 2.5em;
   color: black;
 }
 

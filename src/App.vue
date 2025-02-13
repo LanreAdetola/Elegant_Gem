@@ -116,11 +116,11 @@ h1 {
 @media (max-width: 390px) {
   #app {
     padding: 1em;
-    font-size: 0.9em; /* Slightly smaller font */
+    font-size: 0.7em; /* Slightly smaller font */
   }
 
   h1 {
-    font-size: 1.5em; /* Reduce store name size */
+    font-size: 1.0em; /* Reduce store name size */
   }
 
   .sticky-footer {
