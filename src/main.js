@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './assets/styles.css'; // Import the global CSS file
 import App from './App.vue'
 import i18n from './i18n'; // Import the i18n instance
 import router from './router'; // Import the router instance

@@ -84,7 +84,7 @@ function goToCart() {
   max-width: 100%;
   margin: 0 auto;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  background: #f4f4f4; /* Set a background color */
+  background: #111111; /* Set a background color */
 }
 
 /* Header Styles (Store Name) */
