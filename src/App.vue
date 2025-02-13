@@ -115,8 +115,8 @@ h1 {
 /* Mobile Styles for iPhone and similar devices */
 @media (max-width: 390px) {
   #app {
-    padding: 1em;
-    font-size: 0.7em; /* Slightly smaller font */
+    
+    font-size: 0.9em; /* Slightly smaller font */
   }
 
   h1 {
