@@ -71,21 +71,7 @@ function goToCart() {
 </template>
 
 <style scoped>
-/* General App Styles */
-#app {
-  padding: 2em;
-  padding-bottom: 80px; /* Space for sticky footer */
-  border: 2px solid black;
-  border-radius: 8px;
-  position: relative;
-  min-height: 100vh; /* Full height of the viewport */
-  height: 100%; /* Ensure it takes up the full screen height */
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  background: #111111; /* Set a background color */
-}
+
 
 /* Header Styles (Store Name) */
 h1 {

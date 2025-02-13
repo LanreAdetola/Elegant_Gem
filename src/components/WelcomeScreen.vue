@@ -19,7 +19,7 @@ function submitPreferences() {
 <template>
   <div v-if="isFirstVisit" class="welcome-container">
     <div class="welcome-card">
-      <h2>Welcome to The Elegant Gem</h2>
+      <h1>The Elegant Gem</h1>
 
       <!-- Language Selection -->
       <label for="language">Choose Language:</label>
@@ -41,15 +41,12 @@ function submitPreferences() {
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Ensure it fills the whole screen height */
-  background-image: url('your-background-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
 }
 
 /* Card-style welcome screen */
 .welcome-card {
-  background-color: #ffffff;
+  background-color: #a9a6a69e;
   padding: 2em;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,17 +57,18 @@ function submitPreferences() {
 }
 
 /* Headline */
-h2 {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 1.5em;
+h1 {
+  position: relative;
+  top: 30px;
+  font-size: 3.0em;
+  color: black;
 }
 
 /* Form labels */
 label {
   display: block;
   font-size: 1em;
-  color: #555;
+  color: black;
   margin-top: 1em;
   margin-bottom: 0.5em;
   text-align: left;
@@ -92,7 +90,7 @@ select {
 /* Button styling */
 button {
   padding: 0.8em 1.5em;
-  background-color: #42b883;
+  background-color: black;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -105,6 +103,6 @@ button {
 }
 
 button:hover {
-  background-color: #369d73;
+  background-color: grey;
 }
 </style>
