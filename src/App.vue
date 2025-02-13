@@ -78,10 +78,13 @@ function goToCart() {
   border: 2px solid black;
   border-radius: 8px;
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh; /* Full height of the viewport */
+  height: 100%; /* Ensure it takes up the full screen height */
   box-sizing: border-box;
-  max-width: 100%; /* Ensures it fits within the viewport */
+  max-width: 100%;
   margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background: #f4f4f4; /* Set a background color */
 }
 
 /* Header Styles (Store Name) */
@@ -93,7 +96,7 @@ h1 {
 
 /* Sticky Footer Styles */
 .sticky-footer {
-  position: absolute;
+  position: fixed; /* Make footer fixed at the bottom */
   bottom: 0;
   left: 0;
   right: 0;
