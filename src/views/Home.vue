@@ -1,8 +1,6 @@
 <!-- src/views/Home.vue -->
 <template>
     <div class="home">
-      <h1>Welcome to The Elegant Gem!</h1>
-      <p>Your one-stop shop for stunning jewelry.</p>
       <router-link to="/products">Browse Products</router-link>
     </div>
   </template>

@@ -52,8 +52,8 @@ function goToCart() {
     <div v-else>
       <NavBar /> <!-- Navigation bar -->
 
-      <h1>The Elegant Gem</h1> <!-- Store Name -->
-      <div class="logo-placeholder">[Logo Placeholder]</div> <!-- Placeholder for logo -->
+      <!--main app heading for latter--> 
+      
 
       <!-- Product List -->
       <Products :cart="cart" :updateCart="updateCart" />
@@ -86,7 +86,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #42b883;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 1em;
